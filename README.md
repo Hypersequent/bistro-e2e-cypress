@@ -30,7 +30,9 @@ npm run test:open         # Open Cypress interactive mode
 
 ### Upload testing results to QA Sphere
 
-Test names include markers (e.g., `BD-023: Cart operations...`) that link results to QA Sphere test cases.
+[QA Sphere](https://qasphere.com/) is a modern test management platform that makes organizing test cases, tracking test runs, and analyzing results a breeze. Integration is done via [qas-cli](https://github.com/Hypersequent/qas-cli).
+
+Test names include markers (e.g., `BD-023: Cart operations...`) that automatically link results to QA Sphere test cases.
 
 1. Add your QA Sphere credentials to `.env` or `.qaspherecli` file:
 
