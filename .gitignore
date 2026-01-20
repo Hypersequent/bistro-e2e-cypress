@@ -1,0 +1,22 @@
+.DS_Store
+node_modules
+
+# Cypress artifacts
+cypress/videos
+cypress/screenshots
+cypress/reports
+cypress/downloads
+
+# Environment files
+.env
+.env.*
+!.env.example
+.qaspherecli
+
+# IDE
+.idea/
+.vscode/
+
+# Misc
+*.log
+package-lock.json

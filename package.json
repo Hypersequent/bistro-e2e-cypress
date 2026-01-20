@@ -1,0 +1,66 @@
+{
+	"name": "bistro-e2e-cypress",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "Cypress E2E tests for Bistro Delivery application",
+	"main": "index.js",
+	"scripts": {
+		"clean": "rimraf cypress/reports && rimraf cypress/screenshots && rimraf cypress/videos",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"prepare": "husky",
+		"test": "npm run chrome",
+		"test:open": "cypress open",
+		"chrome": "npm run clean && cypress run --browser chrome",
+		"firefox": "npm run clean && cypress run --browser firefox",
+		"edge": "npm run clean && cypress run --browser edge"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Hypersequent/bistro-e2e-cypress.git"
+	},
+	"keywords": [
+		"cypress",
+		"e2e",
+		"web test automation"
+	],
+	"author": "Hypersequent",
+	"license": "0BSD",
+	"bugs": {
+		"url": "https://github.com/Hypersequent/bistro-e2e-cypress/issues"
+	},
+	"homepage": "https://github.com/Hypersequent/bistro-e2e-cypress#readme",
+	"devDependencies": {
+		"@types/node": "^20.14.10",
+		"@typescript-eslint/eslint-plugin": "^7.16.0",
+		"@typescript-eslint/parser": "^7.16.0",
+		"cypress": "^13.15.0",
+		"cypress-multi-reporters": "^2.0.0",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-cypress": "^3.5.0",
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.7",
+		"mocha-junit-reporter": "^2.2.1",
+		"mochawesome": "^7.1.3",
+		"mochawesome-merge": "^4.3.0",
+		"mochawesome-report-generator": "^6.2.0",
+		"prettier": "^3.3.3",
+		"typescript": "^5.5.3"
+	},
+	"dependencies": {
+		"@faker-js/faker": "^8.4.1",
+		"dotenv": "^16.4.5",
+		"rimraf": "^6.0.1",
+		"zod": "^3.22.4"
+	},
+	"lint-staged": {
+		"*.{js,ts}": [
+			"prettier --write",
+			"eslint --ext js,ts --quiet --fix --"
+		],
+		"*.{md,mdx,cjs,mjs,yml,yaml,html,css,scss,json}": [
+			"prettier --write"
+		]
+	}
+}
