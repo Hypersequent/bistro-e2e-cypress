@@ -16,9 +16,10 @@ export interface TabItem {
 export class Menu {
 	goto() {
 		cy.visit('/')
-		// Click on Today's Menu link in navbar to navigate and set active state
+		// Click on Today's Menu anchor to scroll to menu section
 		cy.get('nav ul > li').contains("Today's Menu").click()
-		cy.get('nav ul > li.active').should('contain', "Today's Menu")
+		// Verify menu section is visible (don't check navbar active state - it's viewport-dependent)
+		cy.get('section#menu').should('be.visible')
 	}
 
 	getNavbarItems(): Cypress.Chainable<NavbarItem[]> {
